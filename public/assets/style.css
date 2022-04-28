@@ -1,0 +1,289 @@
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+   padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+   margin: 0;
+}
+
+body {
+   height: 100%;
+   scroll-behavior: smooth;
+   text-rendering: optimizeSpeed;
+   line-height: 1.5;
+}
+
+ul[class],
+ol[class] {
+   list-style: none;
+}
+
+a {
+   text-decoration-skip-ink: auto;
+   text-decoration: none;
+}
+
+img {
+   max-width: 100%;
+   display: block;
+}
+
+article > * + * {
+   margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+   font: inherit;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+input[type="number"] {
+   -moz-appearance: textfield;
+}
+
+body {
+   font-family: Segoe UI, sans-serif;
+   min-height: 100vh;
+   position: relative;
+}
+
+:root {
+   --main-color: #0d0020;
+   --yellow: #ffb800;
+   --green: #00e23f;
+   --red: #dc3545;
+   --pink: #b8aadc;
+   --purple: #6c35d4;
+}
+
+h3 {
+   font-size: 1.125rem;
+   font-family: monospace;
+}
+
+.page {
+}
+.page__wrapper {
+   max-width: 1200px;
+   margin: 0 auto;
+}
+.form {
+   margin-bottom: 20px;
+}
+.form p {
+   font-size: 0.875rem;
+   font-weight: 600;
+   font-family: "Segoe UI", sans-serif;
+}
+.form__wrapper {
+   background-color: var(--yellow);
+   padding: 20px 25px;
+   border-radius: 8px;
+}
+.form__row {
+   width: 100%;
+   display: flex;
+   gap: 20px;
+   justify-content: space-between;
+   margin-bottom: 15px;
+}
+.form__col {
+   width: calc(50% - 10px);
+}
+.form__col.flex {
+   justify-content: space-between;
+}
+.flex {
+   display: flex;
+}
+.align-center {
+   align-items: center;
+}
+.form__field {
+   position: relative;
+   margin-bottom: 15px;
+}
+.form__field input {
+   width: 100%;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   padding: 6px;
+   outline: none;
+}
+.form__field input:first-child {
+   margin-left: 40%;
+   width: 60%;
+   border-top-left-radius: 0px;
+   border-bottom-left-radius: 0px;
+}
+.form__field input:focus {
+   border-color: #0d0020;
+}
+
+.currency {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   padding: 2px 5px;
+   width: 40%;
+   border: 1px solid #ccc;
+   border-top-left-radius: 4px;
+   border-bottom-left-radius: 4px;
+   background-color: #fff;
+   display: flex;
+   align-items: center;
+   flex-wrap: nowrap;
+   height: 100%;
+   cursor: pointer;
+}
+.currency__dropdown {
+   background-color: #fff;
+   border-radius: 3px;
+   position: absolute;
+   top: calc(100% + 4px);
+   display: none;
+   z-index: 2;
+   width: 100%;
+   left: 0;
+}
+.currency__dropdown .currency__field {
+   width: 100%;
+   padding: 2px 5px;
+}
+.currency__dropdown._active {
+   display: block;
+}
+.currency__field {
+   display: flex;
+   align-items: center;
+   gap: 5px;
+   width: 100%;
+}
+.currency__symbol {
+   width: 22px;
+   height: 22px;
+}
+.currency__trigger {
+   margin-left: auto;
+}
+.currency__current {
+   position: absolute;
+   right: 5px;
+   top: 5px;
+}
+.form__field-icon {
+}
+.form__submit {
+   display: flex;
+}
+#checkbox {
+   position: relative;
+   top: 2px;
+}
+
+button {
+   background-color: #000;
+   flex-shrink: 0;
+   color: #fff;
+   padding: 2px 20px;
+   height: 45px;
+   font-size: 0.735rem;
+   border-radius: 5px;
+   border: none;
+   outline: none;
+   cursor: pointer;
+}
+
+.exchanges {
+}
+.exchanges__wrapper {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 50px;
+}
+.exchange {
+   min-width: calc(100% / 6 - 50px * (5 / 6));
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}
+.exchange__logo {
+   width: 40px;
+   height: 40px;
+   flex-shrink: 0;
+}
+.exchange__info {
+}
+.exchange__name {
+   font-weight: 600;
+   white-space: nowrap;
+}
+.exchange__course {
+   white-space: nowrap;
+   color: rgb(123, 123, 123);
+}
+
+.modal {
+   position: fixed;
+   display: none;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   justify-content: center;
+   align-items: center;
+   background-color: #5f502b61;
+}
+.modal._active {
+   display: flex;
+}
+.modal__wrapper {
+   z-index: 5;
+   display: flex;
+   position: relative;
+   width: 450px;
+   padding: 25px;
+   border-radius: 10px;
+   background-color: var(--yellow);
+}
+.modal__text {
+   color: var(--main-color);
+   font-weight: 600;
+   font-family: Segoe UI, sans-serif;
+}
+.modal__close {
+   font-size: 1.75rem;
+   position: absolute;
+   top: 0px;
+   right: 10px;
+   color: var(--main-color);
+   cursor: pointer;
+}
